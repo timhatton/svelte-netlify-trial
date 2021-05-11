@@ -8,7 +8,7 @@
 <h2>Listed by create date, newest first</h2>
 <dl>
 {#each $recipeList as recipe}
-    <dt><a href="#/recipe/{recipe.id}">{recipe.title}</a></dt>
+    <dt><a href="/recipe/{recipe.id}">{recipe.title}</a></dt>
     <dd>{recipe.description}</dd>
     <!-- <SvelteMarkdown source={recipe.contents} /> -->
 {/each}

@@ -1,10 +1,17 @@
 <script>
-    import { recipeList } from "./recipeListStore";
-    import SvelteMarkdown from 'svelte-markdown';
+  import { recipeList } from "./recipeListStore";
+  import SvelteMarkdown from "svelte-markdown";
+  import { onMount } from "svelte";
+  export let params;
 
-    export let id;
-
-    let recipe = $recipeList.filter(x => x.id == id)[0];
+  let recipe = [];
+  onMount(async () => {
+    let id = params.id;
+    recipe = $recipeList.filter((x) => x.id == id)[0];
+  });
 </script>
+
 <h1>{recipe.title}</h1>
 <SvelteMarkdown source={recipe.contents} />
+
+<a href="\">Back</a>
