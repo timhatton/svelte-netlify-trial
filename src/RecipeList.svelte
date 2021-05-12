@@ -1,6 +1,5 @@
 <script>
     import { recipeList } from './recipeListStore.js';
-    import SvelteMarkdown from 'svelte-markdown';
 </script>
 
 <h1>All recipes</h1>
@@ -10,7 +9,6 @@
 {#each $recipeList as recipe}
     <dt><a href="/recipe/{recipe.id}">{recipe.title}</a></dt>
     <dd>{recipe.description}</dd>
-    <!-- <SvelteMarkdown source={recipe.contents} /> -->
 {/each}
 </dl>
 
