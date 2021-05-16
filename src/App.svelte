@@ -22,12 +22,12 @@
         user.login(u)
         netlifyIdentity.close()
         if ($redirectURL !== '') {
-          navigate($redirectURL)
+		  router.redirect( $redirectURL);
           redirectURL.clearRedirectURL()
         }
       })
     } else if (action === 'logout') {
-      navigate('/')
+		router.redirect('/')
       user.logout()
       netlifyIdentity.logout()
     }
